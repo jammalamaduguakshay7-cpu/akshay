@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+class Student {
+    int rollNo;
+    String name;
+    double marks;
+
+    public void acceptDetails() {
+        Scanner scanner = new Scanner(System.in);
+         
+         System.out.print("Enter Roll Number: ");
+        rollNo = scanner.nextInt();
+        
+        scanner.nextLine(); 
+        
+        System.out.print("Enter Name: ");
+        name = scanner.nextLine();
+        
+        System.out.print("Enter Marks: ");
+        marks = scanner.nextDouble();
+    }
+    
+    public void displayDetails() {
+        System.out.println("\n--- Student Details ---");
+        System.out.println("Roll Number: " + rollNo);
+        System.out.println("Name: " + name);
+        System.out.println("Marks: " + marks);
+    }
+
+    public void checkStatus() {
+        if (marks >= 35) {
+            System.out.println("Status: PASSED");
+        } else {
+            System.out.println("Status: FAILED");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student student = new Student();
+        
+        student.acceptDetails();
+        student.displayDetails();
+        student.checkStatus();
+    }
+}
